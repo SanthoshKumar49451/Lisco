@@ -1,228 +1,190 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { Code, Smartphone, Cpu, Globe } from 'lucide-react';
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-white font-sans">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-blue-500 to-teal-400 rounded-lg flex items-center justify-center transform rotate-12">
-                  <span className="text-white font-bold text-lg transform -rotate-12">T</span>
-                </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full"></div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-gray-900">Techwens</div>
-                <div className="text-xs text-gray-500 -mt-1">Curating Technology that Speaks</div>
-              </div>
-            </div>
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Animated Stars Background */}
+      <div className="absolute inset-0">
+        {[...Array(150)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 3}s`
+            }}
+          />
+        ))}
+      </div>
 
-            {/* Navigation */}
-            <nav className="hidden lg:flex items-center space-x-10">
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium text-base transition-colors">Home</a>
-              <a href="#" className="text-teal-500 font-medium text-base">About</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium text-base transition-colors">Services</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium text-base transition-colors">Blog</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium text-base transition-colors">Contact</a>
-            </nav>
-
-            {/* CTA Button */}
-            <button className="bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
-              <span>Get Started</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+      {/* Navigation */}
+      <nav className="relative z-20 flex justify-between items-center px-8 py-6">
+        {/* Social Icons */}
+        <div className="flex space-x-4">
+          <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center cursor-pointer hover:bg-blue-500 transition-colors">
+            <span className="text-white text-sm font-bold">f</span>
+          </div>
+          <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity">
+            <span className="text-white text-sm">📷</span>
+          </div>
+          <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center cursor-pointer hover:bg-green-400 transition-colors">
+            <span className="text-white text-sm">💬</span>
+          </div>
+          <div className="w-8 h-8 bg-blue-700 rounded flex items-center justify-center cursor-pointer hover:bg-blue-600 transition-colors">
+            <span className="text-white text-sm font-bold">in</span>
           </div>
         </div>
-      </header>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h1 className="text-6xl lg:text-7xl font-black leading-none tracking-tight">
-                <div className="text-white drop-shadow-lg">WEBSITE DESIGN AND</div>
-                <div className="text-white drop-shadow-lg">DEVELOPMENT SERVICES</div>
-                <div className="text-gray-300 text-4xl font-medium mt-4">— ABOUT US</div>
-              </h1>
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <div className="relative">
+            <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center">
+              <Globe className="w-6 h-6 text-white animate-spin" style={{ animationDuration: '10s' }} />
             </div>
-            
-            {/* Hero Illustration */}
-            <div className="relative">
-              <div className="relative w-full h-80">
-                {/* Main yellow background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400 rounded-3xl transform rotate-3"></div>
-                
-                {/* Team illustration */}
-                <div className="relative z-10 h-full flex items-center justify-center p-8">
-                  {/* Lightbulb */}
-                  <div className="absolute top-8 left-12">
-                    <div className="w-12 h-16 bg-yellow-200 rounded-t-full relative">
-                      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-yellow-300 rounded-full"></div>
-                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-2 bg-gray-600 rounded"></div>
-                    </div>
-                  </div>
-                  
-                  {/* People figures */}
-                  <div className="grid grid-cols-2 gap-8 w-full max-w-xs">
-                    {/* Person 1 - Left */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-12 h-12 bg-teal-500 rounded-full mb-2"></div>
-                      <div className="w-16 h-20 bg-blue-600 rounded-t-full"></div>
-                      <div className="w-8 h-12 bg-blue-700 rounded-b-lg -mt-2"></div>
-                    </div>
-                    
-                    {/* Person 2 - Right */}
-                    <div className="flex flex-col items-center mt-8">
-                      <div className="w-12 h-12 bg-pink-400 rounded-full mb-2"></div>
-                      <div className="w-16 h-20 bg-purple-500 rounded-t-full"></div>
-                      <div className="w-8 h-12 bg-purple-600 rounded-b-lg -mt-2"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Additional people in background */}
-                  <div className="absolute bottom-4 left-8">
-                    <div className="w-8 h-8 bg-green-500 rounded-full"></div>
-                    <div className="w-10 h-12 bg-green-600 rounded-t-full mt-1"></div>
-                  </div>
-                  
-                  <div className="absolute bottom-4 right-8">
-                    <div className="w-8 h-8 bg-red-400 rounded-full"></div>
-                    <div className="w-10 h-12 bg-red-500 rounded-t-full mt-1"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className="absolute -top-1 -right-1 w-4 h-4 bg-purple-500 rounded-full"></div>
+          </div>
+          <div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              LISCO
+            </span>
+            <div className="text-xs text-gray-400 -mt-1">DIGITALLY UNSTABLE</div>
           </div>
         </div>
-      </section>
 
-      {/* Main Content Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-8">
-              <h2 className="text-5xl font-bold text-gray-900 leading-tight">
-                <span className="block">Power your Business with</span>
-                <span className="block text-blue-600">Website Design and Development</span>
-                <span className="block">Services</span>
-              </h2>
+        {/* Navigation Menu */}
+        <div className="flex space-x-8 text-gray-300">
+          <a href="#" className="hover:text-cyan-400 transition-colors font-medium">Home</a>
+          <a href="#" className="hover:text-cyan-400 transition-colors font-medium">About</a>
+          <a href="#" className="hover:text-cyan-400 transition-colors font-medium">Solutions</a>
+          <a href="#" className="hover:text-cyan-400 transition-colors font-medium">Contact</a>
+        </div>
+      </nav>
 
-              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-                <p>
-                  What is innovation? It is something that makes your business unique from others. So, what is your 
-                  USP? Major organizations are gaining potential leads worldwide through their uniqueness and 
-                  creativity. Hence, it's high time to consider implementing strategies outside the box if you don't 
-                  have one.
-                </p>
-                <p>
-                  It is essential to depend upon the right Website design and development services to drive good 
-                  revenue. The top development company in India can help your business flourish digitally. Stepping 
-                  forward to avail the correct solution is necessary today.
-                </p>
-              </div>
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 -mt-20">
+        {/* Floating Dots */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(30)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-30 animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 2}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
+              }}
+            />
+          ))}
+        </div>
 
-              {/* Benefits Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
-                <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-lg">Drive powerful revenue</h3>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-lg">Boost brand recognition</h3>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-lg">Connect with the target audience</h3>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-lg">Elevate workforce</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right side illustration */}
-            <div className="relative">
-              <div className="relative w-full h-96">
-                {/* Background shape */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl transform -rotate-2"></div>
-                
-                {/* Content */}
-                <div className="relative z-10 h-full p-8">
-                  {/* Letter T with geometric elements */}
-                  <div className="absolute top-8 left-8">
-                    <div className="relative">
-                      <div className="text-6xl font-bold text-gray-300 opacity-50">T</div>
-                      <div className="absolute -top-2 -right-2 w-4 h-4 border-2 border-gray-400 rounded"></div>
-                      <div className="absolute -bottom-2 -left-2 w-3 h-3 border-2 border-gray-400"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Team collaboration illustration */}
-                  <div className="absolute bottom-8 right-8 left-8 top-20">
-                    <div className="relative h-full">
-                      {/* Puzzle pieces */}
-                      <div className="absolute top-4 right-16">
-                        <div className="w-16 h-16 bg-green-400 rounded-lg transform rotate-12 relative">
-                          <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-4 h-6 bg-green-400 rounded-r-full"></div>
-                        </div>
-                      </div>
-                      
-                      <div className="absolute top-12 right-4">
-                        <div className="w-16 h-16 bg-purple-400 rounded-lg transform -rotate-6 relative">
-                          <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-4 h-6 bg-white rounded-r-full"></div>
-                        </div>
-                      </div>
-                      
-                      {/* People figures */}
-                      <div className="absolute bottom-0 left-0 right-0 flex justify-around items-end">
-                        {/* Person 1 */}
-                        <div className="flex flex-col items-center">
-                          <div className="w-10 h-10 bg-blue-500 rounded-full mb-1"></div>
-                          <div className="w-12 h-16 bg-blue-600 rounded-t-full"></div>
-                        </div>
-                        
-                        {/* Person 2 */}
-                        <div className="flex flex-col items-center">
-                          <div className="w-10 h-10 bg-teal-500 rounded-full mb-1"></div>
-                          <div className="w-12 h-16 bg-teal-600 rounded-t-full"></div>
-                        </div>
-                        
-                        {/* Person 3 */}
-                        <div className="flex flex-col items-center">
-                          <div className="w-10 h-10 bg-yellow-500 rounded-full mb-1"></div>
-                          <div className="w-12 h-16 bg-yellow-600 rounded-t-full"></div>
-                        </div>
-                        
-                        {/* Person 4 */}
-                        <div className="flex flex-col items-center">
-                          <div className="w-10 h-10 bg-pink-500 rounded-full mb-1"></div>
-                          <div className="w-12 h-16 bg-pink-600 rounded-t-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* 3D Globe Effect - Top Right */}
+        <div className="absolute top-16 right-16">
+          <div className="relative w-48 h-48">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full opacity-20 animate-pulse"></div>
+            <div className="absolute inset-2 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full opacity-30 animate-spin" style={{ animationDuration: '30s' }}></div>
+            <div className="absolute inset-8 bg-gradient-to-r from-purple-400 to-pink-600 rounded-full opacity-40"></div>
+            {/* Grid lines */}
+            <div className="absolute inset-0 rounded-full border-2 border-cyan-400 opacity-30"></div>
+            <div className="absolute inset-0 rounded-full border border-cyan-400 opacity-20 transform rotate-45"></div>
+            <div className="absolute inset-0 rounded-full border border-cyan-400 opacity-15 transform rotate-90"></div>
+            {/* Inner glow */}
+            <div className="absolute inset-12 bg-gradient-to-r from-cyan-300 to-blue-400 rounded-full opacity-60 blur-sm"></div>
           </div>
         </div>
-      </section>
+
+        {/* Main Heading */}
+        <div className="text-center mb-12">
+          <h1 className="text-7xl md:text-9xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+            Technology At Its Best
+          </h1>
+          <div className="text-xl md:text-2xl text-gray-300 mb-4">
+            Where Your Imagination Ends...
+          </div>
+          <div className="text-lg md:text-xl text-gray-400">
+            Our Engineering Begins
+          </div>
+        </div>
+
+        {/* Know More Button */}
+        <button className="group relative px-10 py-4 mb-20 border-2 border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 font-medium">
+          <span className="relative z-10">Know More</span>
+          <div className="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
+          {/* Animated border glow */}
+          <div className="absolute inset-0 border-2 border-cyan-400 rounded-lg opacity-0 group-hover:opacity-100 animate-pulse"></div>
+        </button>
+
+        {/* Services Icons */}
+        <div className="flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-24">
+          {/* Web Development */}
+          <div className="group flex flex-col items-center cursor-pointer transform hover:scale-110 transition-all duration-300">
+            <div className="relative mb-6">
+              <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+                <Code className="w-10 h-10 text-white" />
+              </div>
+              <div className="absolute -inset-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300"></div>
+            </div>
+            <span className="text-cyan-400 font-bold text-sm tracking-widest">WEB DEVELOPMENT</span>
+          </div>
+
+          {/* Mobile Development */}
+          <div className="group flex flex-col items-center cursor-pointer transform hover:scale-110 transition-all duration-300">
+            <div className="relative mb-6">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+                <Smartphone className="w-10 h-10 text-white" />
+              </div>
+              <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300"></div>
+            </div>
+            <span className="text-cyan-400 font-bold text-sm tracking-widest">MOBILE DEVELOPMENT</span>
+          </div>
+
+          {/* IoT Development */}
+          <div className="group flex flex-col items-center cursor-pointer transform hover:scale-110 transition-all duration-300">
+            <div className="relative mb-6">
+              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+                <Cpu className="w-10 h-10 text-white" />
+              </div>
+              <div className="absolute -inset-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300"></div>
+            </div>
+            <span className="text-cyan-400 font-bold text-sm tracking-widest">IOT DEVELOPMENT</span>
+          </div>
+        </div>
+      </div>
+
+      {/* About Section */}
+      <div className="relative z-10 px-8 py-20 mt-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold mb-12 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent text-center">
+            About Lisco Software
+          </h2>
+          <div className="text-gray-300 text-xl leading-relaxed max-w-4xl mx-auto">
+            <p className="mb-4">
+              At <span className="text-cyan-400 font-bold">LISCO SOFTWARE</span>, we are mission-driven explorers
+            </p>
+            <p className="mb-4">
+              navigating the digital cosmos. Our expert team crafts innovative
+            </p>
+            <p>
+              software solutions that fuel businesses across the galaxy. From
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Navigation Dots */}
+      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-30 flex flex-col space-y-6">
+        <div className="w-4 h-4 bg-cyan-400 rounded-full cursor-pointer hover:scale-125 transition-transform shadow-lg"></div>
+        <div className="w-3 h-3 bg-gray-600 rounded-full cursor-pointer hover:scale-125 transition-transform"></div>
+        <div className="w-3 h-3 bg-gray-600 rounded-full cursor-pointer hover:scale-125 transition-transform"></div>
+      </div>
+
+      {/* Background Gradient Effects */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-cyan-900/10 via-transparent to-purple-900/10 pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/5 rounded-full blur-3xl pointer-events-none"></div>
     </div>
   );
 };

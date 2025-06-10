@@ -4,7 +4,7 @@ import Chat from './Chat'
 
 const page = () => {
   return (
-    <div>
+    <div className='bg-black' >
       <LandingPage/>
       <Chat/>
     </div>
