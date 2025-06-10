@@ -133,7 +133,7 @@ const Chat = () => {
                                 }`}
                             >
                                 <div className="text-xs opacity-70 mb-1">
-                                    {message.role === "user" ? "You" : "Techwens AI"}
+                                    {message.role === "user" ? "You" : "Lisco"}
                                 </div>
                                 {message.text}
                             </div>
